@@ -7,7 +7,7 @@ import {BoardService} from "./tictactoe/board.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private boardService: BoardService) {
+  constructor(public boardService: BoardService) {
   }
   setBoard(){
     this.boardService.matrix = ["O","X","O","X","O","X","O","X","O"];

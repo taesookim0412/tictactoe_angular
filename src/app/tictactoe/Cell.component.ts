@@ -5,13 +5,14 @@ import {BehaviorSubject} from "rxjs";
 @Component({
   selector: "Cell",
   template: `
-  <div (click)="onClickCell()" class="cell">{{(boardService.matrixSubject | async | slice :index:index+1)}}</div>
+  <div (click)="onClickCell()" class="cell">{{(boardService.matrix[index])}}</div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['Cell.component.scss']
 })
 export class CellComponent{
   @Input() index: number = 0;
+  @Input() boardElement: string = "";
   constructor(public boardService: BoardService) {
   }
   onClickCell(){
