@@ -5,8 +5,8 @@ import {BehaviorSubject} from "rxjs";
 @Component({
   selector: "Cell",
   template: `
-  <div (click)="onClickCell()" class="cell">{{(boardService.matrix[index])}}</div>
-<!--<div (click)="onClickCell()" class="cell">{{(boardElement)}}</div>-->
+<!--  <div (click)="onClickCell()" class="cell">{{(boardService.matrix[index])}}</div>-->
+<div (click)="onClickCell()" class="cell">{{(boardElement)}}</div>
 
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

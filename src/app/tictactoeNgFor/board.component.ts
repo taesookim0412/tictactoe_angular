@@ -5,16 +5,18 @@ import {BoardService} from "../board.service";
   selector: "board",
   template: `
     Winner: None
-    <Cell *ngFor="let item of range; index as index" [boardElement]="board[index]" [index]="index"></Cell>
+    <Cell *ngFor="let item of range; index as index" [boardElement]="boardService.matrix[index]" [index]="index"></Cell>
+<!--    <Cell *ngFor="let cell of board; index as index" [boardElement]="cell" [index]="index"></Cell>-->
+
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['board.component.scss']
 })
 export class BoardComponent{
   range = [0,1,2,3,4,5,6,7,8];
-  @Input() board: string[] = [];
+  // @Input() board: string[] = [];
 
-  constructor() {
+  constructor(public boardService: BoardService) {
   }
 
 }
