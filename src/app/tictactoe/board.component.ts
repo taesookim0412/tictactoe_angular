@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input} from "@angular/core";
-import {BoardService} from "./board.service";
+import {BoardService} from "../board.service";
 
 @Component({
   selector: "board",

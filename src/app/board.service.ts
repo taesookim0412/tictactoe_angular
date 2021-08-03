@@ -6,12 +6,13 @@ import {BehaviorSubject} from "rxjs";
 })
 export class BoardService {
   matrix = new Array(9);
-  matrixSubject = new BehaviorSubject<Array<string>>(this.matrix);
   currentTurn = "X"
   constructor() { }
   setIndex(index: number){
     this.matrix[index] = this.currentTurn;
-    this.matrixSubject.next(this.matrix);
     this.currentTurn = this.currentTurn == "X" ? "O" : "X";
+  }
+  setThisMatrix(){
+    this.matrix = ["O","X","O","X","O","X","O","X","O"];
   }
 }

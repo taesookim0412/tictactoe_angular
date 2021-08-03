@@ -6,17 +6,20 @@ import {BehaviorSubject} from "rxjs";
   selector: "Cell",
   template: `
   <div (click)="onClickCell()" class="cell">{{(boardService.matrix[index])}}</div>
+<!--<div (click)="onClickCell()" class="cell">{{(boardElement)}}</div>-->
+
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['Cell.component.scss']
 })
 export class CellComponent{
   @Input() index: number = 0;
-  @Input() boardElement: string = "";
+  // @Input() boardElement: string = "";
   constructor(public boardService: BoardService) {
   }
   onClickCell(){
     // this.boardService.matrix = new Array(9).fill(this.boardService.currentTurn);
     this.boardService.setIndex(this.index);
+    // this.boardElement = this.boardService.matrix[this.index];
   }
 }

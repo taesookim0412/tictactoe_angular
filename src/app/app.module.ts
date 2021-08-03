@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {BoardComponent} from "./tictactoe/board.component";
-import {BoardService} from "./tictactoe/board.service";
-import {CellComponent} from "./tictactoe/Cell.component";
+import {BoardComponent} from "./tictactoeNgForDefault/board.component";
+import {BoardService} from "./board.service";
+import {CellComponent} from "./tictactoeNgForDefault/Cell.component";
 
 @NgModule({
   declarations: [
